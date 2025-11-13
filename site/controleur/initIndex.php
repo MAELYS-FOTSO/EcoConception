@@ -31,10 +31,10 @@
 
 			$description .= "<li class='sub-item'><p class='texte'>".$resultat['descr']."</p></li>";
 
-			$description .= "<li class='sub-item'><img class='image' src='images/".$resultat['img']."'></li>";
-			
+			$description .= "<li class='sub-item'><img class='image'   src='images/".$resultat['img']."'  alt='image'></li>";
+
 			$description .= "</ul></li>";
-		
+
 		}else{
 			if($resultat['descr']!=''){
 				$description .= "<li class='main-item'><p class='texte'>".$resultat['descr']."</p></li>";
