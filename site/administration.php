@@ -24,7 +24,7 @@ if ((!(isset($_SESSION['id'])) || empty($_SESSION['id'])) && $_SESSION['role'] !
 	<!--*************** MENU ***************-->
 	<?php include "includes/header.php"; ?>
 
-	<script src="libs/jquery.min.js" defer></script>
+	<script src="libs/jquery.min.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function () {
 
