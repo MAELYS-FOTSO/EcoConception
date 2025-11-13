@@ -2,70 +2,92 @@
 session_start();
 ?>
 <!DOCTYPE html>
-
-<html lang="fr">
-
+<html lang="fr-FR">
 <head>
-	<title>Contact</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contactez la Scierie Gineste pour toute demande d'information, de devis ou de partenariat. Téléphone, e-mail et adresse disponibles.">
+  <title>Contact | Scierie Gineste - Bois et gestion durable</title>
 
-	<meta name="description" content="Scierie">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- SEO Open Graph -->
+  <meta property="og:title" content="Contact | Scierie Gineste">
+  <meta property="og:description" content="Contactez la Scierie Gineste pour toute demande d'information.">
+  <meta property="og:type" content="website">
 
-	<link rel="stylesheet" href="content/style.css">
-	<link rel="stylesheet" href="libs/font-awesome.min.css">
-	
+  <!-- Styles -->
+  <link rel="preload" href="content/style.css" as="style">
+  <link rel="stylesheet" href="content/style.css" media="all">
+  <link rel="stylesheet" href="libs/font-awesome.min.css">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
 </head>
 
 <body>
-	<!--*************** MENU ***************-->
-	<?php include "includes/header.php"; ?>
-	<script src="libs/jquery.min.js"></script>
-	<script type="text/javascript">
-		$(document).ready(function () {
+  <!--*************** MENU ***************-->
+  <?php include "includes/header.php"; ?>
+  <!--*************** END MENU ***************-->
 
-			$('.menu').click(function () {
+  <main id="contenu-principal" class="contactContainer">
+    <h1>Contactez-nous</h1>
 
-				$('ul').toggleClass('active');
-			})
-		})
-	</script>
-	<!--*************** END MENU ***************-->
-	<main >
-		<div class="contactContainer">
+    <section aria-labelledby="contact-email">
+      <h2 id="contact-email">Email</h2>
+      <p>
+        <a href="mailto:scierie.gineste@wanadoo.fr">scierie.gineste@wanadoo.fr</a>
+      </p>
+    </section>
 
-			<h2> EMAIL </h2>
-			<p> scierie.gineste@wanadoo.fr
+    <section aria-labelledby="contact-tel">
+      <h2 id="contact-tel">Téléphone</h2>
+      <p>
+        <a href="tel:+33970355409">+33 9 70 35 54 09</a>
+      </p>
+    </section>
 
-			<h2> TELEPHONE </h2>
-			<p> +33 9 70 35 54 09
+    <section aria-labelledby="contact-adresse">
+      <h2 id="contact-adresse">Adresse</h2>
+      <address>
+        Route de Rodez<br>
+        12220 Montbazens<br>
+        France
+      </address>
+    </section>
 
-			<div class="adresse">
-				<h2> ADRESSE </h2>
-				<ul>
-					<li> Route de Rodez
-					<li> 12220
-					<li> MONTBAZENS
+    <section aria-labelledby="contact-reseaux">
+      <h2 id="contact-reseaux">Nous suivre</h2>
+      <ul class="logo">
+        <li class="facebook">
+          <a href="https://www.facebook.com/Scierie-du-Fargal-613509152159633/"
+             target="_blank"
+             rel="noopener noreferrer"
+             aria-label="Page Facebook de la Scierie Gineste">
+            <img src="images/facebook.png"
+                 width="40"
+                 height="40"
+                 loading="lazy"
+                 alt="Logo Facebook Scierie Gineste">
+          </a>
+        </li>
+      </ul>
+    </section>
+  </main>
 
-				</ul>
-			</div>
+  <!--*************** PIED DE PAGE ***************-->
+  <?php include "includes/footer.php"; ?>
+  <!--*************** PIED DE PAGE ***************-->
 
-			<div class="reseauxSociaux">
-				<h2> NOUS SUIVRE </h2>
-
-				<ul class="logo">
-					<li class="facebook"><a href="https://www.facebook.com/Scierie-du-Fargal-613509152159633/"
-							target="_blank"><img src="images/facebook.png"></a></li>
-				</ul>
-			</div>
-
-		</div>
-	</main>
-
-	<!--*************** PIED DE PAGE ***************-->
-	<?php include "includes/footer.php"; ?>
-	<!--*************** PIED DE PAGE ***************-->
-
-
+  <!-- Script menu sans jQuery -->
+  <script defer>
+    document.addEventListener('DOMContentLoaded', function() {
+      const menuBtn = document.querySelector('.menu');
+      const navList = document.querySelector('ul');
+      if (menuBtn && navList) {
+        menuBtn.addEventListener('click', () => {
+          navList.classList.toggle('active');
+        });
+      }
+    });
+  </script>
 </body>
-
 </html>
