@@ -216,13 +216,7 @@ footer img {
   margin: 0 5px;
   width: 25px;
   height: 25px;
-<<<<<<< HEAD
-  
   transition: transform .2s ease
-=======
-  filter: brightness(0) invert(1);
-  transition: transform 0.2s ease;
->>>>>>> 9f941b020403fb38474ef336108b56f0f64989b3
 }
 
 footer img:hover {
@@ -270,53 +264,6 @@ footer img:hover {
   display: block;
 }
 
-<<<<<<< HEAD
-
-=======
-.contactContainer {
-  max-width: 900px;
-  width: 90%;
-  margin: 40px auto;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  background-color: #fff;
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px #0000001a;
-}
-
-.rightContainer {
-  flex: 1;
-  min-width: 280px;
-}
-
-.rightContainer > div {
-  margin-bottom: 25px;
-}
-
-.rightContainer h2 {
-  color: #2e7d32;
-  font-size: 18px;
-  margin-bottom: 10px;
-  border-bottom: 2px solid #43a047;
-  display: inline-block;
-  padding-bottom: 5px;
-}
-
-.rightContainer p,
-.rightContainer li {
-  font-size: 16px;
-  color: #333;
-  margin: 5px 0;
-}
-
-.rightContainer ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
->>>>>>> 9f941b020403fb38474ef336108b56f0f64989b3
 
 .reseauxSociaux ul.logo {
   display: flex;
@@ -361,7 +308,6 @@ body {
   }
 }
 
-<<<<<<< HEAD
 
 .contactContainer {
   max-width: 900px;
@@ -382,28 +328,13 @@ body {
   .contactContainer {
     transition: none;
   }
-=======
-.rightContainer {
-  flex: 1;
-  min-width: 280px;
-}
-
-.rightContainer > div {
-  margin-bottom: 25px;
->>>>>>> 9f941b020403fb38474ef336108b56f0f64989b3
 }
 
 .contactContainer h1 {
   font-size: 1.8rem;
   margin-bottom: 10px;
-<<<<<<< HEAD
   color: #2a2a2a;
   text-align: center;
-=======
-  border-bottom: 2px solid #43a047;
-  display: inline-block;
-  padding-bottom: 5px;
->>>>>>> 9f941b020403fb38474ef336108b56f0f64989b3
 }
 
 .contactContainer h2 {
@@ -420,7 +351,6 @@ body {
   font-size: 1rem;
   line-height: 1.6;
   color: #333;
-<<<<<<< HEAD
 }
 
 .contactContainer address {
@@ -429,15 +359,6 @@ body {
   padding: 12px;
   border-radius: 8px;
   box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.05);
-=======
-  margin: 5px 0;
-}
-
-.rightContainer ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
->>>>>>> 9f941b020403fb38474ef336108b56f0f64989b3
 }
 
 .contactContainer a {
@@ -543,7 +464,6 @@ a {
 }
 
 a:hover {
-<<<<<<< HEAD
   color: #2e7d32
 }
 
@@ -552,9 +472,6 @@ a:hover {
   .video-wrapper .play-overlay { width: 52px; height: 52px; font-size: 18px; }
 }
 
-=======
-  color: #2e7d32;
-}
 
 .produits,
 .text-p {
@@ -1197,4 +1114,3 @@ textarea::placeholder {
   display: table;
   color: #303030;
 }
->>>>>>> 9f941b020403fb38474ef336108b56f0f64989b3
