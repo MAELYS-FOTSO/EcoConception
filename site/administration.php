@@ -8,136 +8,113 @@ if ((!(isset($_SESSION['id'])) || empty($_SESSION['id'])) && $_SESSION['role'] !
 <!DOCTYPE html>
 
 <html lang="fr">
+
 <head>
 	<title>TEST GREEN IT</title>
 
+	<meta name="description" content="Scierie">
 	<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="style.css">
 
 	<link rel="stylesheet" href="content/style.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+	<link rel="stylesheet" href="libs/font-awesome.min.css">
+
 </head>
 
 <body>
-<!--*************** MENU ***************-->
-<nav class="navbar">
-	<li class="toggle">
-		<ul class ="toggle-item"><i class="fa fa-bars menu" aria-hidden="true"> </i></ul>
-	</li>
-   <ul class="nav-links">
-      	<li class="nav-item"><a href="index.php">ACCUEIL</a></li>
-      	<li class="nav-item"><a href="produits.php">LES PRODUITS</a></li>
-	  	<li class="nav-item"><a href="video.php">VIDEO</a></li>
-		<li class="nav-item"><a href="contact.php">NOUS CONTACTER</a></li>
-<?php
-	if (isset($_SESSION['id'])) {
-		echo "<li class='nav-item'><a href='administration.php'>ADMINISTRATION</a></li>";
-	}
-	if(isset($_SESSION['id'])) {
-		echo "<li class='nav-item'><a href='deconnexion.php'>DECONNEXION</a></li>";
-	}else{
-		echo "<li class='nav-item'><a href='connexion.php'>CONNEXION</a></li>";
-	}
-?>
-    </ul>
+	<!--*************** MENU ***************-->
+	<?php include "includes/header.php"; ?>
 
-	<img src="./images/scierie.gif" style="width:70px; margin:5px;">
-</nav>
+	<script src="libs/jquery.min.js" defer></script>
+	<script type="text/javascript">
+		$(document).ready(function () {
 
+			$('.menu').click(function () {
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script type="text/javascript">
-
-	$(document).ready(function(){
-
-		$('.menu').click(function(){
-
-			$('ul').toggleClass('active');
+				$('ul').toggleClass('active');
+			})
 		})
-	})
-
-</script>
-<!--*************** END MENU ***************-->
+	</script>
+	<!--*************** END MENU ***************-->
 	<!-- Ajout d'un produit -->
 	<div class="row">
-	<div class="containerAjoutProduit col-90">
-		<h1> Ajout d'un nouveau produit</h1>
-		<span class="reussite">
-			<?php
+		<div class="containerAjoutProduit col-90">
+			<h1> Ajout d'un nouveau produit</h1>
+			<span class="reussite">
+				<?php
 				if (isset($_SESSION['msgAddOk'])) {
 					echo $_SESSION['msgAddOk'];
 					$_SESSION['msgAddOk'] = "";
 				}
 
-			?>
-		</span>
-		<span class="err">
-			<?php
+				?>
+			</span>
+			<span class="err">
+				<?php
 				if (isset($_SESSION['msgAddNok'])) {
 					echo $_SESSION['msgAddNok'];
 					$_SESSION['msgAddNok'] = "";
 				}
 
-			?>
-		</span>
-		<form  id="formAjoutProduit" action="" method="post">
-			<div class="row">
-				<div class="col-40">
-					<label for="lbProduit">Titre du produit</label>
+				?>
+			</span>
+			<form id="formAjoutProduit" action="" method="post">
+				<div class="row">
+					<div class="col-40">
+						<label for="lbProduit">Titre du produit</label>
+					</div>
+					<div class="col-40">
+						<input type="text" id="lbProduit" name="lbProduit" placeholder="Entrer le titre du produit"
+							required />
+					</div>
 				</div>
-				<div class="col-40">
-					<input type="text" id="lbProduit" name="lbProduit" placeholder="Entrer le titre du produit" required/>
+				<div class="row">
+					<div class="col-40">
+						<label for="lbDescr">Description</label>
+					</div>
+					<div class="col-40" id="description">
+						<input type="text" id="lbDescr" name="lbDescr" placeholder="Entrer la description" required />
+					</div>
 				</div>
-			</div>
-			<div class="row">
-				<div class="col-40">
-					<label for="lbDescr">Description</label>
+				<div class="row">
+					<div class="col-40">
+						<label for="lbImg">Image</label>
+					</div>
+					<div class="col-40" id="image">
+						<input type="text" id="lbImg" name="lbImg" placeholder="Entrer le nom d'une image" required />
+					</div>
 				</div>
-				<div class="col-40" id="description">
-					<input type="text" id="lbDescr" name="lbDescr" placeholder="Entrer la description" required/>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-40">
-					<label for="lbImg">Image</label>
-				</div>
-				<div class="col-40" id="image">
-					<input type="text" id="lbImg" name="lbImg" placeholder="Entrer le nom d'une image" required/>
-				</div>
-			</div>
 
-			<div class="row">
-				<input id="btnAjoutProduit" type="button" value="Ajouter">
-			</div>
-		</form>
-	</div>
+				<div class="row">
+					<input id="btnAjoutProduit" type="button" value="Ajouter">
+				</div>
+			</form>
+		</div>
 
 
 
 
-	<!-- Modification de produit -->
-	<div class="containerModifProduit col-90">
-		<h1> Modification d'un produit</h1>
-		<span class="reussite">
-			<?php
+		<!-- Modification de produit -->
+		<div class="containerModifProduit col-90">
+			<h1> Modification d'un produit</h1>
+			<span class="reussite">
+				<?php
 				if (isset($_SESSION['msgModifOk'])) {
 					echo $_SESSION['msgModifOk'];
 					$_SESSION['msgModifOk'] = "";
 				}
 
-			?>
-		</span>
-		<span class="err">
-			<?php
+				?>
+			</span>
+			<span class="err">
+				<?php
 				if (isset($_SESSION['msgModifNok'])) {
 					echo $_SESSION['msgModifNok'];
 					$_SESSION['msgModifNok'] = "";
 				}
 
-			?>
-        </span>
-			<form  id="formModifproduit" action="#" method="post">
+				?>
+			</span>
+			<form id="formModifproduit" action="#" method="post">
 				<div class="row" id="rowModificationProduit">
 				</div>
 				<div class="row">
@@ -145,7 +122,8 @@ if ((!(isset($_SESSION['id'])) || empty($_SESSION['id'])) && $_SESSION['role'] !
 						<label for="lbDescrModif">Description</label>
 					</div>
 					<div class="col-40" id="descriptionModif">
-						<input type="text" id="lbDescrModif" name="lbDescrModif" placeholder="Entrer la description" required/>
+						<input type="text" id="lbDescrModif" name="lbDescrModif" placeholder="Entrer la description"
+							required />
 					</div>
 				</div>
 				<div class="row">
@@ -153,59 +131,53 @@ if ((!(isset($_SESSION['id'])) || empty($_SESSION['id'])) && $_SESSION['role'] !
 						<label for="lbImgModif">Image</label>
 					</div>
 					<div class="col-40" id="imageModif">
-						<input type="text" id="lbImgModif" name="lbImgModif" placeholder="Entrer le nom d'une image" required/>
+						<input type="text" id="lbImgModif" name="lbImgModif" placeholder="Entrer le nom d'une image"
+							required />
 					</div>
 				</div>
 				<div class="row">
-					<input id="btnModifProduit" type="button" value="Modifier">
-				</div>
+					<input id="btnModifProduit" type="button" value="Modifier" </div>
 
 			</form>
-	</div>
+		</div>
 	</div>
 	<!-- Suppression de produit -->
 	<div class="row">
-	<div class="containerSuppProduit col-90">
-		<h1> Suppression d'un produit</h1>
-		<span class="reussite">
-			<?php
+		<div class="containerSuppProduit col-90">
+			<h1> Suppression d'un produit</h1>
+			<span class="reussite">
+				<?php
 				if (isset($_SESSION['msgSuppOk'])) {
 					echo $_SESSION['msgSuppOk'];
 					$_SESSION['msgSuppOk'] = "";
 				}
 
-			?>
-        </span>
-		<span class="err">
-			<?php
+				?>
+			</span>
+			<span class="err">
+				<?php
 				if (isset($_SESSION['msgSuppNok'])) {
 					echo $_SESSION['msgSuppNok'];
 					$_SESSION['msgSuppNok'] = "";
 				}
 
-			?>
-        </span>
-			<form  id="formSuppProduit" action="#" method="post">
+				?>
+			</span>
+			<form id="formSuppProduit" action="#" method="post">
 				<div class="row" id="rowSuppression">
 				</div>
 				<div class="row">
-				<input id="btnSuppProduit" type="button" value="Supprimer">
-			</div>
-		    </form>
-	</div>
-<!--*************** PIED DE PAGE ***************-->
-<footer id="footer">
-<ul class="footer-links">
-    <li class="footer-item">©Projet 3iL</li>
-    <li class="footer-item"><a href="#" target="_blank"><img id="logo" src="images/facebook.png"></a></li>
-    <li class="footer-item">Site test</li>
-<ul/>
-</footer>
-<!--*************** PIED DE PAGE ***************-->
+					<input id="btnSuppProduit" type="button" value="Supprimer">
+				</div>
+			</form>
+		</div>
+		<!--*************** PIED DE PAGE ***************-->
+		<?php include "includes/footer.php"; ?>
+		<!--*************** PIED DE PAGE ***************-->
 
-	<script src="scripts/initSelectModifProduit.js"></script>
-	<script src="scripts/initSelectModifAccueil.js"></script>
-	<script src="scripts/initSelectSuprProduit.js"></script>
+		<script src="scripts/initSelectModifProduit.js"></script>
+		<script src="scripts/initSelectSuprProduit.js"></script>
+
 </body>
 
 </html>

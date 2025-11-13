@@ -3,28 +3,33 @@ session_start();
 ?>
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
+
   <meta charset="UTF-8">
   <meta name="description" content="Scierie">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>EcoConception - Green IT</title>
 
   <link rel="stylesheet" href="content/style.css">
-  <link rel="stylesheet" href="lib/bootstrap.min.css">
+  <link rel="stylesheet" href="libs/font-awesome.min.css">
+  
 </head>
 
 <body>
 
   <!--*************** NAVBAR ***************-->
-  <?php
+  <?php include "includes/header.php"; ?>
+  <script src="libs/jquery.min.js" defer></script>
+  <script type="text/javascript">
+    $(document).ready(function () {
 
-include 'header.php';
-?>
+      $('.menu').click(function () {
 
-  <!--*************** SLIDER ***************-->
-  <section class="slider-section">
-    <?php include "includes/slider.php"; ?>
-  </section>
+        $('ul').toggleClass('active');
+      })
+    })
+  </script>
 
   <!--*************** CONTENU ***************-->
   <main class="forms">
@@ -32,12 +37,9 @@ include 'header.php';
   </main>
 
   <!--*************** FOOTER ***************-->
-  <?php
+  <?php include "includes/footer.php"; ?>
 
-include 'footer.php';
-?>
-  <script src="scripts/slider.js" defer></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" defer></script>
 
 </body>
+
 </html>
