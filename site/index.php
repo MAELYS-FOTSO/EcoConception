@@ -13,7 +13,7 @@ session_start();
 
   <link rel="stylesheet" href="content/style.css">
   <link rel="stylesheet" href="libs/font-awesome.min.css">
-  
+
 </head>
 
 <body>

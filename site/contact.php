@@ -13,7 +13,7 @@ session_start();
 
 	<link rel="stylesheet" href="content/style.css">
 	<link rel="stylesheet" href="libs/font-awesome.min.css">
-	
+
 </head>
 
 <body>
@@ -54,7 +54,7 @@ session_start();
 
 				<ul class="logo">
 					<li class="facebook"><a href="https://www.facebook.com/Scierie-du-Fargal-613509152159633/"
-							target="_blank"><img src="images/facebook.png"></a></li>
+							><img src="images/facebook.png"></a></li>
 				</ul>
 			</div>
 
