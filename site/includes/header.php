@@ -2,7 +2,7 @@
   <nav class="navbar">
     <div class="logo-container">
 
-      <img src="./images/scierie.gif" alt="scierie" class="logo">
+      <img src="./images/scierie.webp" alt="scierie" class="logo">
       <span class="brand-name">Scierie</span>
     </div>
 
